@@ -1,0 +1,125 @@
+.chat {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+} 
+.chat_bar {
+    height: 100%;
+    background-color: #ebf7f9;
+    flex: 0.2;
+    padding: 20px;
+    border-right: 1px solid #fdfdfd;
+}
+.chat_right{
+    height: 100%;
+    flex: 0.8;
+}
+.chat_bar_header {
+    margin: 100px 0 30px 0;
+}
+.chat_bar h2 {
+    text-align: center;
+    padding-top: 12px;
+}
+.chat_users > * {
+    margin-bottom: 10px;
+    color: #607eaa;
+    font-size: 14px;
+}
+.online_users > * {
+    margin-bottom: 10px;
+    color: rgb(238, 102, 102);
+    font-style: italic;
+}
+.chat_body_header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ebf6f9;
+}
+.leave_chat_btn {
+    padding: 10px;
+    width: 150px;
+    border: none;
+    outline: none;
+    background-color: #2dabd1;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fffbf1;
+}
+.messages_container {
+    width: 100%;
+    padding: 20px;
+    overflow-y: scroll;
+}
+.messages_container > * {
+    margin-bottom: 10px;
+}
+.chat_footer {
+    position: fixed;
+    width: 75vw;
+    bottom: 0;
+    padding: 10px;
+    background-color: #ebf7f9;
+    height: 65px;
+}
+.chat_footer_form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.message_input {
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+    outline: none;
+    padding: 15px;
+    margin-right: 5px;
+}
+.send_button {
+    width: 150px;
+    background-color: #30ee00;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: #f8f8f8;
+    font-weight: 600;
+    cursor: pointer;
+}
+.send_button:hover {
+    background-color: rgb(111, 211, 111);
+}
+.recieved_message {
+    background-color: #c2ebf5;
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.sent_message {
+    background-color: rgb(194, 243, 194);
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: auto;
+    font-size: 15px;
+}
+.sender_name {
+    text-align: right;
+}
+.message > p {
+    font-size: 13px;
+}
+.message_status {
+    position: fixed;
+    bottom: 10vh;
+    font-size: 13px;
+    font-style: italic;
+}

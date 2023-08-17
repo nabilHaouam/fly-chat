@@ -9,19 +9,37 @@ const server = http.createServer(app)
 const io = new Server(server, {
     cors: {
         origin: 'http://localhost:3000',
-        methods: ['GET', 'POST']
     }
 })
 
+let users = []
+
 io.on('connection',(socket)=>{
     console.log(`User Connected: ${socket.id }`)
-    socket.on('join_room', (data)=>{
-        socket.join(data)
-        console.log(`User with ID: ${socket.id} has joined the room: ${data}`)
+    socket.on('message', (data)=>{
+        io.emit('messageResponse', data)
+    })
+    socket.on('newUser', (data)=>{
+        //adding a new user to the user's list
+        users.push(data)
+        //sending the list of users to the client side
+        io.emit('newUserResponse', users)
+     
+    })
+    socket.on('typing',(data)=> {
+        socket.broadcast.emit('typingResponse', data)
+    })
+    socket.on('stoppedTyping',(data)=> {
+        socket.broadcast.emit('stoppedTypingResponse', data)
     })
     socket.on('disconnect', ()=> {
+        //updating the list of users after a user gets disconnected
+        users = users.filter((user)=> user.socketId !== socket.id)
         console.log('User ' + socket.id + ' disconnected')
+        //letting the client know of the new users list
+        io.emit('newUserResponse', users)
     })
+    
 })
 
 server.listen(3001, ()=>{
