@@ -55,6 +55,8 @@
     color: #fffbf1;
 }
 .messages_container {
+    max-height: 65vh;
+    overflow-y: auto;
     width: 100%;
     padding: 20px;
     overflow-y: scroll;
@@ -123,6 +125,7 @@
 .message_status {
     position: fixed;
     bottom: 10vh;
+    padding: 10px;
     font-size: 13px;
     font-style: italic;
 }

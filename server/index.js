@@ -8,7 +8,7 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
     cors: {
-        origin: ['https://fly-chat-client.onrender.com', 'https://fly-chat-zwoq.onrender.com'],
+      origin: ['https://fly-chat-client.onrender.com', 'https://fly-chat-zwoq.onrender.com'],
     }
 })
 
